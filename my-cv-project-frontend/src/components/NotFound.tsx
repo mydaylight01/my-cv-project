@@ -23,9 +23,8 @@ const ErrorElement: React.FC = () => {
 
     return (
         <div className={styles.screen}>
-            <h1 className={`md:text-[6rem] text-[4rem] ${styles.message}`}>Oops!</h1>
-            <span className={`md:text-3xl text-xl ${styles.message}`}>Something went wrong</span>
-            <span className={`md:text-2xl text-lg ${styles.message}`}>Please try again later, or contact support</span>
+            <h1 className={`md:text-[6rem] text-[4rem] ${styles.message}`}>404</h1>
+            <span className={`md:text-3xl text-xl ${styles.message}`}>Page Not Found!</span>
             <div className={styles.buttonGroup}>
                 <button onClick={() => navigate(Paths.Home)} className={styles.button}>Home</button>
                 <button onClick={() => navigate(Paths.Contact)} className={styles.button}>Contact</button>

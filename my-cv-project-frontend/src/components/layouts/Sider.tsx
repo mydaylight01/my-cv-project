@@ -1,8 +1,7 @@
 const Sider = () => {
     return (
-        <>
-
-        </>
+        <aside>
+        </aside>
     )
 }
 

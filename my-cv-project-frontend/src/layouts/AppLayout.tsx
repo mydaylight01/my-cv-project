@@ -1,7 +1,8 @@
-import Header from "../components/layouts/Header";
-import Footer from "../components/layouts/Footer";
-import Sider from "../components/layouts/Sider";
 import { useState } from "react";
+
+import Header from "../components/layouts/Header";
+import Sider from "../components/layouts/Sider";
+import Footer from "../components/layouts/Footer";
 
 interface AppLayoutProps {
     children: React.ReactNode;
@@ -15,9 +16,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children, className }: AppLayoutP
     return (
         <div className={overrideClassName}>
             <Header />
-            <aside>
-                <Sider />
-            </aside>
+            <Sider />
             <section>
                 <main className="flex-1">{children}</main>
             </section>

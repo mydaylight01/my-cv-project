@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { ErrorManager } from "./ErrorManager";
+import { ErrorManager } from "../../utils/ErrorManager";
 import { useLocation } from "react-router-dom";
 
-export const ScrollTop = () => {
+const ScrollTop: React.FC = () => {
     const { pathname } = useLocation();
 
     useEffect(() => {
@@ -19,3 +19,5 @@ export const ScrollTop = () => {
 
     return null;
 }
+
+export default ScrollTop;
