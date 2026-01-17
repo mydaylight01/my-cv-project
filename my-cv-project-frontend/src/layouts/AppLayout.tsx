@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Header from "../components/layouts/Header";
 import Sider from "../components/layouts/Sider";
 import Footer from "../components/layouts/Footer";
@@ -10,8 +8,7 @@ interface AppLayoutProps {
 }
 
 const AppLayout: React.FC<AppLayoutProps> = ({ children, className }: AppLayoutProps) => {
-
-    const [overrideClassName] = useState<string>(className || "flex flex-col h-screen");
+    const overrideClassName: string = className ?? "flex flex-col h-screen w-screen";
 
     return (
         <div className={overrideClassName}>

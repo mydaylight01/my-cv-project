@@ -18,6 +18,6 @@ const ScrollTop: React.FC = () => {
     }, [pathname]);
 
     return null;
-}
+};
 
 export default ScrollTop;

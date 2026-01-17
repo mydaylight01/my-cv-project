@@ -4,6 +4,7 @@ export type UserInfo = {
     email: string;
     avatar: string; // Image Url
     role: string;
+    language: string;
 };
 
 export type ROLES = "user" | "admin" | "moderator";

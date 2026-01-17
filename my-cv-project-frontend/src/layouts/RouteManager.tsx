@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 
 // Internal Project Files (Hooks / Utils / Providers)
-import { useAppAuthHook } from '../providers/hooks/AppAuthHook';
+import { useAppAuthHook } from '../providers/hooks/useAppAuth';
 
 // Components & Layouts (Outside to Inside)
 import ScrollTop from '../components/utils/ScrollTop';
@@ -10,6 +10,7 @@ import AppLayout from "./AppLayout";
 import Blank from "../components/Blank";
 import ErrorElement from "../components/ErrorElement";
 import NotFound from "../components/NotFound";
+import LoadingOverlay from "../components/utils/LoadingOverlay";
 
 // Local Constants / Config / Types
 import Paths from "./paths";
@@ -17,11 +18,12 @@ import Paths from "./paths";
 const RouteManager: React.FC = () => {
     const { currentUserInfo } = useAppAuthHook();
 
-    const isAuthenticated = currentUserInfo !== null;
+    const isAuthenticated: boolean = currentUserInfo !== null;
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col h-screen w-screen">
             <ScrollTop />
+            <LoadingOverlay />
             <Routes>
                 {
                     isAuthenticated ? (

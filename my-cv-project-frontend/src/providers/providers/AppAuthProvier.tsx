@@ -1,11 +1,9 @@
 import { useMemo, useState } from "react";
-import type { UserInfo } from "../../../../shared/types";
-import AppAuthContext from "../contexts/AppAuthContext";
 
-export interface AppAuthContextType {
-    currentUserInfo: UserInfo | null;
-    setCurrentUserInfo: (user: UserInfo | null) => void;
-}
+import AppAuthContext from "../contexts/AppAuthContext";
+import type { AppAuthContextType } from "../contexts/AppAuthContext";
+
+import type { UserInfo } from "../../../../shared/types";
 
 interface AppAuthProvierProps {
     children: React.ReactNode;
