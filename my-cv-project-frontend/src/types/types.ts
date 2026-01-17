@@ -6,5 +6,3 @@ export type UserInfo = {
     role: string;
     language: string;
 };
-
-export type ROLES = "user" | "admin" | "moderator";

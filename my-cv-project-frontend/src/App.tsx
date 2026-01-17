@@ -2,7 +2,7 @@
 import type { JSX } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-// Local Constants / Config / Types
+// Local Config / Types
 import { customTheme } from './theme';
 
 // Providers (Outside to Inside)

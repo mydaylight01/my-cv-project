@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { LANGUAGES } from '../../../../shared/constants';
+import { LANGUAGES } from '../../constants/translate';
 
 export interface TranslateParams {
     code: string;

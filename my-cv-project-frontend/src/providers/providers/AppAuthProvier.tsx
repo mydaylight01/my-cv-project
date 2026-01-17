@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import AppAuthContext from "../contexts/AppAuthContext";
 import type { AppAuthContextType } from "../contexts/AppAuthContext";
 
-import type { UserInfo } from "../../../../shared/types";
+import type { UserInfo } from "../../types/types";
 
 interface AppAuthProvierProps {
     children: React.ReactNode;

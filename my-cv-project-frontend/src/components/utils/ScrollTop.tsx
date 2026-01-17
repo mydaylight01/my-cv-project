@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ErrorManager } from "../../utils/ErrorManager";
+import { ErrorMessageController } from "../../utils/ErrorMessageController";
 import { useLocation } from "react-router-dom";
 
 const ScrollTop: React.FC = () => {
@@ -13,7 +13,8 @@ const ScrollTop: React.FC = () => {
                 behavior: 'smooth'
             })
         } catch (error: unknown) {
-            ErrorManager(error);
+            ErrorMessageController(error);
+            throw error;
         }
     }, [pathname]);
 

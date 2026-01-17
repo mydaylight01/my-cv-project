@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import type { UserInfo } from "../../../../shared/types";
+import type { UserInfo } from "../../types/types";
 
 export interface AppAuthContextType {
     currentUserInfo: UserInfo | null;
