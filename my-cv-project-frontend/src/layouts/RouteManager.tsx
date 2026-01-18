@@ -13,7 +13,7 @@ import NotFound from "../components/NotFound";
 import LoadingOverlay from "../components/utils/LoadingOverlay";
 
 // Local Constants / Config / Types
-import Paths from "./paths";
+import Paths from "../constants/paths";
 
 const RouteManager: React.FC = () => {
     const { currentUserInfo } = useAppAuthHook();

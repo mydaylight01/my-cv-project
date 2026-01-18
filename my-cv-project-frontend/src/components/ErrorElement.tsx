@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Paths from "../layouts/paths";
+import Paths from "../constants/paths";
 
 import { IoCaretBack, IoCaretForward } from "react-icons/io5";
 import { FaFlushed } from "react-icons/fa";
