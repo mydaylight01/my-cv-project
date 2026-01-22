@@ -5,7 +5,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
     templateCode: "template1",
     personalCv: {
         id: 1,
-        uuid: "1",
+        uuid: "mydaylight",
         cvName: "Mockup CV 1",
         publishStatus: false,
         imageUrl: "https://krita-artists.org/uploads/default/original/3X/c/f/cfc4990e32f31acd695481944f2163e96ff7c6ba.jpeg",

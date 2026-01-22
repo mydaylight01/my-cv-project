@@ -11,7 +11,7 @@ import AppAuthProvier from './providers/providers/AppAuthProvier';
 import LoadingProvider from './providers/providers/LoadingProvider';
 
 // Components & Layouts (Outside to Inside)
-import RouteManager from './layouts/RouteManager';
+import RouteManager from './layout/RouteManager';
 
 // Ant Design
 import { ConfigProvider } from 'antd';
@@ -22,17 +22,17 @@ import './App.css'
 function App(): JSX.Element {
 
   return (
-    <AppAuthProvier>
-      <TranslateProvider>
-        <LoadingProvider>
+    <LoadingProvider>
+      <AppAuthProvier>
+        <TranslateProvider>
           <BrowserRouter>
             <ConfigProvider theme={customTheme}>
               <RouteManager />
             </ConfigProvider>
           </BrowserRouter>
-        </LoadingProvider>
-      </TranslateProvider>
-    </AppAuthProvier>
+        </TranslateProvider>
+      </AppAuthProvier>
+    </LoadingProvider>
   )
 }
 

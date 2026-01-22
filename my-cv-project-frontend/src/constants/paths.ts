@@ -1,4 +1,4 @@
-const Paths = {
+export const Paths: { [key: string]: string } = {
     Home: "/",
     Login: "/login",
     Register: "/register",
@@ -11,4 +11,4 @@ const Paths = {
     NotFound: "*",
 }
 
-export default Paths;
+export type Paths = keyof typeof Paths;

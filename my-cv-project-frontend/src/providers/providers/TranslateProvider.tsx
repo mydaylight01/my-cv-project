@@ -2,19 +2,24 @@
 import React, { useState } from 'react';
 
 // Local Providers / Hooks / Contexts
-import TranslateContext, { type TranslateParams } from '../contexts/TranslateContext';
+import TranslateContext from '../contexts/TranslateContext';
 import { useAppAuthHook } from '../hooks/useAppAuth';
 import { LANGUAGES } from '../../constants/translate';
 
 // Utils
 import { ErrorMessageController } from '../../utils/ErrorMessageController';
 
-interface TranslateDictionary {
+export interface TranslateDictionary {
     [language: LANGUAGES]: {
         [code: string]: {
             [key: string]: string;
         };
     };
+}
+
+export interface TranslateParams {
+    group: string;
+    key: string;
 }
 
 interface TranslateProviderProps {
@@ -27,28 +32,15 @@ const TranslateProvider: React.FC<TranslateProviderProps> = ({ children }: Trans
     const { currentUserInfo } = useAppAuthHook();
 
     const [language, setLanguage] = useState<LANGUAGES>(currentUserInfo?.language as LANGUAGES || DEFAULT_LANGUAGE);
-    const [allLanguage, setAllLanguage] = useState<Record<LANGUAGES, string>>({});
     const [dictionary, setDictionary] = useState<TranslateDictionary>({});
 
-    const translate = (params: TranslateParams): string => {
-        try {
-            const { code, key }: TranslateParams = params;
-
-            const output: string = dictionary[language]?.[code]?.[key] ?? findTranslateDescription(params);
-            return output;
-        } catch (error: unknown) {
-            ErrorMessageController(error);
-            return '';
-        }
-    }
-
     const findTranslateDescription = async (params: TranslateParams): Promise<string> => {
-        const { code, key }: TranslateParams = params;
+        const { group, key }: TranslateParams = params;
 
         //Error Output
-        const errorTranslate: string = `${language}.${code}.${key}`;
+        const errorTranslate: string = `${language}.${group}.${key}`;
         try {
-            const queryTranslate = await fetch(`http://localhost:3000/api/translate/${language}/${code}`).then((res) => res.json());
+            const queryTranslate = await fetch(`http://localhost:8080/api/translate/${language}/${group}`).then((res) => res.json());
 
             //Check if query translate exists
             const isQueryTranslateExists: boolean = queryTranslate !== undefined;
@@ -58,25 +50,37 @@ const TranslateProvider: React.FC<TranslateProviderProps> = ({ children }: Trans
                     ...prevDictionary,
                     [language]: {
                         ...prevDictionary[language],
-                        [code]: {
-                            ...prevDictionary[language][code],
-                            ...queryTranslate[language][code]
+                        [group]: {
+                            ...prevDictionary[language][group],
+                            ...queryTranslate[language][group]
                         }
                     }
                 }));
-                return queryTranslate[language][code][key];
+                return queryTranslate[language][group][key];
             }
 
-            console.warn('[TranslateProvider] Not Found:', `${language}.${code}.${key}`);
+            console.warn('[TranslateProvider] Not Found:', `${language}.${group}.${key}`);
             return errorTranslate;
         } catch (error: unknown) {
-            ErrorMessageController(error);
+            ErrorMessageController("TranslateProvider", "findTranslateDescription", error);
             return errorTranslate;
         }
     }
 
+    const translate = (params: TranslateParams): string => {
+        try {
+            const { group, key }: TranslateParams = params;
+
+            const output: string = dictionary[language]?.[group]?.[key] ?? findTranslateDescription(params);
+            return output;
+        } catch (error: unknown) {
+            ErrorMessageController("TranslateProvider", "translate", error);
+            return '';
+        }
+    }
+
     return (
-        <TranslateContext.Provider value={{ language, setLanguage, allLanguage, setAllLanguage, translate }}>
+        <TranslateContext.Provider value={{ language, setLanguage, translate }}>
             {children}
         </TranslateContext.Provider>
     );

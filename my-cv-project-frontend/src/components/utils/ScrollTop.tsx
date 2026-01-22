@@ -13,7 +13,7 @@ const ScrollTop: React.FC = () => {
                 behavior: 'smooth'
             })
         } catch (error: unknown) {
-            ErrorMessageController(error);
+            ErrorMessageController("ScrollTop", "useEffect", error);
             throw error;
         }
     }, [pathname]);

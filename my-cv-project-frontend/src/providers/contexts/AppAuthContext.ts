@@ -3,12 +3,14 @@ import type { UserInfo } from "../../types/types";
 
 export interface AppAuthContextType {
     currentUserInfo: UserInfo | null;
-    setCurrentUserInfo: (user: UserInfo | null) => void;
+    appLogin: (username: string, password: string) => Promise<UserInfo | null>;
+    appLogout: () => void;
 }
 
 const AppAuthContext: React.Context<AppAuthContextType> = createContext<AppAuthContextType>({
     currentUserInfo: null,
-    setCurrentUserInfo: () => { },
+    appLogin: async () => null,
+    appLogout: async () => { },
 });
 
 export default AppAuthContext;
