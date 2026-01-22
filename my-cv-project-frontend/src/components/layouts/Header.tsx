@@ -3,29 +3,25 @@ import { IoIosLogOut } from "react-icons/io";
 import { FaUserGear } from "react-icons/fa6";
 
 import { useAppAuthHook } from "../../providers/hooks/useAppAuth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Paths } from "../../constants/paths";
 
-const ButtonTemplate: React.FC<{ label: string; onClick?: () => void }> = ({ label, onClick }) => {
-    return (
-        <button
-            type="button"
-            className="hover:bg-white/20 py-2 px-4 rounded-md font-semibold transition-all duration-300 ease-in-out cursor-pointer"
-            onClick={onClick}>{label}</button>
-    );
-};
+interface ButtonTemplateProps {
+    label: string;
+    path: string;
+    pathParams?: string;
+}
 
-const Header: React.FC = () => {
-    const { currentUserInfo, appLogout } = useAppAuthHook();
-
+const ButtonTemplate: React.FC<ButtonTemplateProps> = ({ label, path, pathParams }) => {
+    const location = useLocation();
     const navigate = useNavigate();
 
-    const handleRoute = (route?: string) => {
+    const handleRoute = () => {
         try {
-            console.log("[Header][handleRoute][Start] > Navigating to: ", route);
-            if (!route) return;
+            console.log("[Header][handleRoute][Start] > Navigating to: ", path);
+            if (!path) return;
 
-            navigate(route);
+            navigate(path, { state: pathParams });
         } catch (error) {
             console.error("[Header][handleRoute][Error] > Failed to navigate to the specified route");
             throw error;
@@ -33,6 +29,19 @@ const Header: React.FC = () => {
             console.log("[Header][handleRoute][Done]");
         }
     }
+
+    return (
+        <button
+            type="button"
+            className="hover:bg-white/20 py-2 px-4 rounded-md font-semibold transition-all duration-300 ease-in-out cursor-pointer"
+            onClick={handleRoute}
+            disabled={location.pathname === path}>{label}</button>
+    );
+};
+
+const Header: React.FC = () => {
+    const { currentUserInfo, appLogout } = useAppAuthHook();
+    const navigate = useNavigate();
 
     const handleLogout = () => {
         try {
@@ -55,14 +64,26 @@ const Header: React.FC = () => {
                         <IoMenu size={28} className="hover:text-gray-400 hover:cursor-pointer hover:translate-x-1 transition-all duration-300 ease-in-out" />
                     </div>
                     <div id="header-nav-left-menu" className="flex items-center gap-3">
-                        <ButtonTemplate label="Home" onClick={() => handleRoute(Paths.Home)} />
+                        <ButtonTemplate
+                            label="Home"
+                            path={Paths.Home}
+                        />
                         {currentUserInfo && (
                             <>
-                                <ButtonTemplate label="Dashboard" onClick={() => handleRoute(Paths.Dashboard)} />
-                                <ButtonTemplate label="My CV" onClick={() => handleRoute(Paths.MyCv)} />
+                                <ButtonTemplate
+                                    label="Dashboard"
+                                    path={Paths.Dashboard}
+                                />
+                                <ButtonTemplate
+                                    label="My CV"
+                                    path={Paths.MyCv}
+                                />
                             </>
                         )}
-                        <ButtonTemplate label="Contact" onClick={() => handleRoute(Paths.Contact)} />
+                        <ButtonTemplate
+                            label="Contact"
+                            path={Paths.Contact}
+                        />
                     </div>
                 </div>
                 <div id="header-nav-right">
@@ -73,8 +94,14 @@ const Header: React.FC = () => {
                         </div>
                     ) : (
                         <div id="header-nav-right-logged-out" className="flex items-center gap-3">
-                            <ButtonTemplate label="Login" onClick={() => handleRoute(Paths.Login)} />
-                            <ButtonTemplate label="Register" onClick={() => handleRoute(Paths.Register)} />
+                            <ButtonTemplate
+                                label="Login"
+                                path={Paths.Login}
+                            />
+                            <ButtonTemplate
+                                label="Register"
+                                path={Paths.Register}
+                            />
                         </div>
                     )}
                 </div>
