@@ -50,7 +50,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
             },
             {
                 contactTypeName: "LinkedIn",
-                link: "www.linkedin.com/in/my-natthawut-sangsee",
+                link: "https://www.linkedin.com/in/my-natthawut-sangsee",
                 contactInfo: "my-natthawut-sangsee",
                 side: "",
                 sequence: 4,
