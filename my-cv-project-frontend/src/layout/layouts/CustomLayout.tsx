@@ -1,11 +1,11 @@
 import { Header, Sider, Footer } from "../../components/layouts";
 
-interface AppLayoutProps {
+interface CustomLayoutProps {
     children: React.ReactNode;
     className?: string;
 }
 
-const AppLayout: React.FC<AppLayoutProps> = ({ children, className }: AppLayoutProps) => {
+const CustomLayout: React.FC<CustomLayoutProps> = ({ children, className }: CustomLayoutProps) => {
     const overrideClassName: string = className ?? "flex flex-col h-screen w-screen";
 
     return (
@@ -13,11 +13,11 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children, className }: AppLayoutP
             <Header />
             <section className="flex flex-1">
                 <Sider />
-                <main className="p-4 h-full w-full">{children}</main>
+                <main className="h-full w-full">{children}</main>
             </section>
             <Footer />
         </div>
     )
 }
 
-export default AppLayout;
+export default CustomLayout;

@@ -9,9 +9,9 @@ const ErrorElement: React.FC = () => {
 
     const styles: Record<string, string> = {
         screen: `flex flex-col items-center justify-center text-white gap-2`,
-        message: `font-mono font-semibold drop-shadow-2xl`,
+        message: `font-semibold drop-shadow-2xl`,
         buttonGroup: `flex flex-row gap-10 mt-5`,
-        button: `bg-indigo-500 cursor-pointer drop-shadow-2xl duration-300 ease-in-out flex font-mono font-semibold gap-2 hover:bg-indigo-600 items-center justify-center md:px-6 md:text-lg px-3 py-2 rounded-full shadow-lg text-md text-white transition-all hover:-translate-y-1 hover:shadow-indigo-500/50`,
+        button: `bg-indigo-500 cursor-pointer drop-shadow-2xl duration-300 ease-in-out flex font-semibold gap-2 hover:bg-indigo-600 items-center justify-center md:px-6 md:text-lg px-3 py-2 rounded-full shadow-lg text-md text-white transition-all hover:-translate-y-1 hover:shadow-indigo-500/50`,
     };
 
     return (
