@@ -1,26 +1,37 @@
 export interface MyCvData {
     ownerDisplayName: string,
     templateCode: string,
-    personalCv: {
-        id: number,
-        uuid: string,
-        cvName: string,
-        publishStatus: boolean,
-        imageUrl: string,
-        languageCode: string,
-        titleName: string,
-        firstName: string,
-        lastName: string,
-        jobPosition: string,
-        contact: Array<Contact>,
-        summary: Array<Summary>,
-        skillSet: Array<SkillSet>,
-        workExperiences: Array<WorkExperience>,
-        achievements: Array<Achievement>,
-        educationExperiences: Array<EducationExperience>,
-        languageSkill: Array<LanguageSkill>,
-        // certificates: Array<Certificate>,
-    }
+    personalCv: PersonalCv
+}
+
+export interface PersonalCv {
+    id: number,
+    uuid: string,
+    cvName: string,
+    publishStatus: boolean,
+    imageUrl: string,
+    imageUrlFlip: string,
+    languageCode: string,
+    titleName: string,
+    firstName: string,
+    lastName: string,
+    jobPosition: string,
+    paragraphBgImg: Array<ParagraphBgImg>,
+    contact: Array<Contact>,
+    summary: Array<Summary>,
+    skillSet: Array<SkillSet>,
+    workExperiences: Array<WorkExperience>,
+    achievements: Array<Achievement>,
+    educationExperiences: Array<EducationExperience>,
+    languageSkill: Array<LanguageSkill>,
+    // certificates: Array<Certificate>,
+}
+
+export interface ParagraphBgImg {
+    paragraphName: string,
+    imageUrl: string,
+    bgColor: string,
+    blurLevel: string,
 }
 
 export interface Contact {
@@ -29,7 +40,7 @@ export interface Contact {
     contactInfo: string, // Contact information if no link
     side: string, // Display side on the content
     sequence: number,
-    bootstrapIcon: string,
+    icon: string,
 }
 
 export interface Summary {

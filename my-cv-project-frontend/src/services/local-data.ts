@@ -9,11 +9,20 @@ const myCvDataTemplate: Array<MyCvData> = [{
         cvName: "Mockup CV 1",
         publishStatus: false,
         imageUrl: "https://krita-artists.org/uploads/default/original/3X/c/f/cfc4990e32f31acd695481944f2163e96ff7c6ba.jpeg",
+        imageUrlFlip: "https://lh3.googleusercontent.com/d/1h_5aaDk0JC4-kPki7zHRnbd549HGazNC",
         languageCode: "TH",
         titleName: "",
         firstName: "Natthawut",
         lastName: "SANGSEE",
         jobPosition: "Software Developer",
+        paragraphBgImg: [
+            {
+                paragraphName: "greetings",
+                imageUrl: "https://img.freepik.com/premium-photo/sunrise-silicon-digital-daybreak-scene-vintage-computer-room-concept-technology-enthusiasts-retro-tech-digital-aesthetics-vintage-computers-sunrise-photography_918839-31963.jpg?semt=ais_hybrid&w=740&q=80",
+                bgColor: "",
+                blurLevel: "xs"
+            }
+        ],
         contact: [
             {
                 contactTypeName: "Phone",
@@ -21,31 +30,31 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 contactInfo: "063-934-9554",
                 side: "L",
                 sequence: 1,
-                bootstrapIcon: "bi bi-telephone-fill"
+                icon: "telephone"
             },
             {
                 contactTypeName: "Email",
-                link: "natthawut.sangsee@gmail.com",
+                link: "",
                 contactInfo: "natthawut.sangsee@gmail.com",
                 side: "L",
                 sequence: 2,
-                bootstrapIcon: "bi bi-envelope-at-fill"
+                icon: "envelope"
             },
             {
                 contactTypeName: "Github",
                 link: "https://github.com/mydaylight01",
-                contactInfo: "https://github.com/mydaylight01",
+                contactInfo: "mydaylight01",
                 side: "R",
                 sequence: 1,
-                bootstrapIcon: "bi bi-github"
+                icon: "github"
             },
             {
                 contactTypeName: "LinkedIn",
                 link: "www.linkedin.com/in/my-natthawut-sangsee",
-                contactInfo: "www.linkedin.com/in/my-natthawut-sangsee",
+                contactInfo: "my-natthawut-sangsee",
                 side: "R",
                 sequence: 2,
-                bootstrapIcon: "bi bi-linkedin"
+                icon: "linkedin"
             }
         ],
         summary: [

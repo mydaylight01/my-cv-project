@@ -6,14 +6,15 @@ import { useLoading } from "../../../providers/hooks/useLoading";
 import mockupApi from "../../../services/api/mockup.api";
 
 import type { MyCvData } from "../../../services/model/mockup.model";
+import { Blank } from "../../../components";
 
 const ContactPage: React.FC = () => {
     const { showLoading, hideLoading } = useLoading();
 
-    const [userCvData, setUserCvData] = useState<MyCvData | null>(null);
+    const [userCvData, setUserCvData] = useState<MyCvData | undefined>(undefined);
 
     useEffect(() => {
-        const loadUserCvData = async () => {
+        const loadUserCvData = async (): Promise<void> => {
             try {
                 console.log("[ContactPage][loadUserCvData][Start]");
                 showLoading();
@@ -39,7 +40,7 @@ const ContactPage: React.FC = () => {
     }, [hideLoading, showLoading])
 
     if (!userCvData) {
-        return null;
+        return <Blank />;
     }
     return (
         <TemplateManager templateCode={userCvData.templateCode} data={userCvData} />

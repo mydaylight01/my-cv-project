@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { useAppAuthHook } from '../providers/hooks/useAppAuth';
 
 // Components & Layouts (Outside to Inside)
-import { AppLayout, AuthLayout } from "./layouts";
+import { AppLayout, AuthLayout, CustomLayout } from "./layouts";
 import { Blank, ErrorElement, NotFound } from "../components";
 import { LoadingOverlay, ScrollTop } from "../components/utils";
 
@@ -46,9 +46,9 @@ const RouteManager: React.FC = () => {
                                 </AppLayout>
                             } />
                             <Route path={Paths.MyCv} errorElement={errorElement} element={
-                                <AppLayout>
+                                <CustomLayout>
                                     <MyCvPage />
-                                </AppLayout>
+                                </CustomLayout>
                             } />
                             <Route path={Paths.CvEditor} errorElement={errorElement} element={
                                 <AppLayout>
@@ -82,19 +82,19 @@ const RouteManager: React.FC = () => {
                     </AppLayout>
                 } />
                 <Route path={Paths.Contact} errorElement={errorElement} element={
-                    <AppLayout>
+                    <CustomLayout>
                         <ContactPage />
-                    </AppLayout>
+                    </CustomLayout>
                 } />
                 <Route path={`${Paths.Share}/:contentId`} errorElement={errorElement} element={
-                    <AppLayout>
+                    <CustomLayout>
                         <SharePage />
-                    </AppLayout>
+                    </CustomLayout>
                 } />
                 <Route path={Paths.NotFound} errorElement={errorElement} element={
-                    <AppLayout>
+                    <CustomLayout>
                         <NotFound />
-                    </AppLayout>
+                    </CustomLayout>
                 } />
             </Routes>
         </div >

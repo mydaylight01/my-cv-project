@@ -1,8 +1,17 @@
-const Template2Page: React.FC = () => {
+import { useEffect } from "react";
+
+import type { TemplatePageProps } from "../template.interface";
+
+const Template2Page: React.FC<TemplatePageProps> = ({ data }) => {
+
+    useEffect(() => {
+        console.log("[Template 2][Start] data", data);
+    }, [data]);
+
     return (
-        <div>
-            <h1>Template 2</h1>
-        </div>
+        <>
+            <p>{data?.cvName}</p>
+        </>
     );
 };
 

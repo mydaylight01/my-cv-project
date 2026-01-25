@@ -1,3 +1,6 @@
+import { Blank } from "../../../components";
+import { Template1Page, Template2Page } from "./templates";
+
 import type { MyCvData } from "../../../services/model/mockup.model";
 
 interface TemplateManagerProps {
@@ -9,11 +12,28 @@ const TemplateManager: React.FC<TemplateManagerProps> = ({
     templateCode,
     data
 }) => {
+    const renderTemplate = (templateCode: string, data: MyCvData) => {
+        console.log("[TemplateManager][renderTemplate][Start] templateCode", templateCode);
+        const cvData = data?.personalCv;
+
+        switch (templateCode) {
+            case "template1":
+                console.log("[TemplateManager][renderTemplate][End] template1");
+                return <Template1Page data={cvData} />
+            case "template2":
+                console.log("[TemplateManager][renderTemplate][End] template2");
+                return <Template2Page data={cvData} />
+            default:
+                console.log("[TemplateManager][renderTemplate][End] unknown templateCode");
+                return <Blank />;
+        }
+    }
+
+    if (!templateCode) return <Blank />;
     return (
-        <div>
-            <h1>{templateCode}</h1>
-            <h1>{data.ownerDisplayName}</h1>
-        </div>
+        <>
+            {renderTemplate(templateCode, data)}
+        </>
     );
 };
 

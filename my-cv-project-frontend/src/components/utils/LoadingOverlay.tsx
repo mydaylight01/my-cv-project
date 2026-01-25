@@ -4,13 +4,14 @@ import { useLoading } from '../../providers/hooks/useLoading';
 const LoadingOverlay: React.FC = () => {
     const { isLoading } = useLoading();
 
-    if (!isLoading) return null;
-
     const loadingTextWithDelay = (delay: number): string => {
-        const output: string = `text-white font-bold text-2xl rounded-full animate-bounce [animation-delay:-${delay}s]`
+        // animation-delay value should be negative value because animate-bounce will start immediately without waiting.
+        // closer the delay value to -1, the faster the animation will start.
+        const output: string = `text-white font-bold text-2xl rounded-full animate-bounce [animation-delay:-${delay}s]`;
         return output;
     };
 
+    if (!isLoading) return null;
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center backdrop-blur-md transition-all duration-500">
             <div className="w-60 h-60 border-r-2 border-t-5 border-indigo-300/60 blur-[1px] rounded-full animate-[spin_1.5s_linear_infinite_reverse]"></div>
