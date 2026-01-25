@@ -28,15 +28,15 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 contactTypeName: "Phone",
                 link: "",
                 contactInfo: "063-934-9554",
-                side: "L",
+                side: "",
                 sequence: 1,
                 icon: "telephone"
             },
             {
                 contactTypeName: "Email",
                 link: "",
-                contactInfo: "natthawut.sangsee@gmail.com",
-                side: "L",
+                contactInfo: "sangsee.natthawut@gmail.com",
+                side: "",
                 sequence: 2,
                 icon: "envelope"
             },
@@ -44,18 +44,26 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 contactTypeName: "Github",
                 link: "https://github.com/mydaylight01",
                 contactInfo: "mydaylight01",
-                side: "R",
-                sequence: 1,
+                side: "",
+                sequence: 3,
                 icon: "github"
             },
             {
                 contactTypeName: "LinkedIn",
                 link: "www.linkedin.com/in/my-natthawut-sangsee",
                 contactInfo: "my-natthawut-sangsee",
-                side: "R",
-                sequence: 2,
+                side: "",
+                sequence: 4,
                 icon: "linkedin"
-            }
+            },
+            {
+                contactTypeName: "Line",
+                link: "",
+                contactInfo: "063-934-9554",
+                side: "",
+                sequence: 5,
+                icon: "line"
+            },
         ],
         summary: [
             {

@@ -70,7 +70,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
         try {
             // console.log("[Template 1][GreetingsParagraph][Start] text:", text);
 
-            navigator.clipboard.writeText(text);
+            navigator.clipboard.writeText(text.trim());
             toast.success(`${text} Copied to clipboard`);
             // console.log("[Template 1][GreetingsParagraph][End] text copied to clipboard");
         } catch (error) {
