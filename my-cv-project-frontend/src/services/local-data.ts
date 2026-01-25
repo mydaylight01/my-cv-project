@@ -68,7 +68,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
         summary: [
             {
                 paragraph: 1,
-                content: "Full Stack Developer with almost 2 years of experience Familiar with front-end development using Angular and React, as well as back-end development using Java Spring Boot, C# and Node.js",
+                content: "Full Stack Developer with 2 years of experience Familiar with front-end development using Angular and React, as well as back-end development using Java Spring Boot, C# and Node.js",
                 isBlank: false
             },
             {
@@ -76,11 +76,6 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 content: "Experienced in collaborating on team projects and providing technical support. Capable of creating API documentation, implementing fundamental security measures, and contributing to system performance improvements.",
                 isBlank: false
             },
-            {
-                paragraph: 3,
-                content: "Additionally, skilled in delivering clear and structured training sessions, as well as assisting with technical guidance and mentorship.",
-                isBlank: false
-            }
         ],
         skillSet: [
             {
