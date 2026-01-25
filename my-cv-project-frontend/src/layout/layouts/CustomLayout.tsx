@@ -6,7 +6,7 @@ interface CustomLayoutProps {
 }
 
 const CustomLayout: React.FC<CustomLayoutProps> = ({ children, className }: CustomLayoutProps) => {
-    const overrideClassName: string = className ?? "flex flex-col h-screen w-screen";
+    const overrideClassName: string = className ?? "flex flex-col h-full w-full";
 
     return (
         <div className={overrideClassName}>

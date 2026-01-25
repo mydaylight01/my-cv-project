@@ -149,9 +149,10 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                 <div className="flex md:hidden h-full relative z-10 flex-col items-center justify-center py-10">
                     <div className="flex flex-col w-full items-center justify-center">
                         <div className="h-full flex items-center justify-center">
-                            <div className="flex-shrink-0 w-48 h-48 rounded-full overflow-hidden shadow-xl shadow-gray-950/30">
-                                <img src={data?.imageUrlFlip} className="w-full h-full object-cover hover:scale-110 hover:rotate-3 hover:translate-y-[-10px] transition-all duration-500 ease-in-out" alt="profile" />
-                            </div>
+                            {flipCard({
+                                imageUrl: data?.imageUrl,
+                                imageUrlFlip: data?.imageUrlFlip
+                            })}
                         </div>
                         <div className="flex-1 min-w-0 flex flex-col py-8">
                             <div className="flex flex-col items-center gap-1">
