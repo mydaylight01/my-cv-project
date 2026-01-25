@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import TemplateManager from "../cv-templates/TemplateManager";
 
-import { useLoading } from "../../../providers/providers/LoadingProvider";
+import { useLoading } from "../../../providers/hooks/useLoading";
 import mockupApi from "../../../services/api/mockup.api";
 
 import type { MyCvData } from "../../../services/model/mockup.model";
@@ -18,11 +18,6 @@ const ContactPage: React.FC = () => {
                 console.log("[ContactPage][loadUserCvData][Start]");
                 showLoading();
 
-                if (userCvData) {
-                    console.log("[ContactPage][loadUserCvData] userCvData is already loaded");
-                    return;
-                }
-
                 const userCvLoadResult = await mockupApi.previewCvByCvUuid({ cvUuid: "mydaylight" });
                 console.log("[ContactPage][loadUserCvData] userCvLoadResult: ", userCvLoadResult);
 
@@ -35,13 +30,13 @@ const ContactPage: React.FC = () => {
                 console.error("[ContactPage][loadUserCvData][Error]", error);
                 throw error;
             } finally {
-                console.log("[ContactPage][loadUserCvData][End]");
+                console.log("[ContactPage][loadUserCvData][Finally]");
                 hideLoading();
             }
         }
 
         loadUserCvData();
-    }, [userCvData])
+    }, [hideLoading, showLoading])
 
     if (!userCvData) {
         return null;

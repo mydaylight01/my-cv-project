@@ -494,12 +494,16 @@ const myCvDataTemplate: Array<MyCvData> = [{
 export const findCvByUuid = (uuid: string): Promise<MyCvData | undefined> => {
     return new Promise<MyCvData | undefined>((resolve, reject) => {
         const response: MyCvData | undefined = myCvDataTemplate?.find((cv) => cv.personalCv.uuid === uuid);
+
+        const randomTimeout = Math.floor(Math.random() * 1000); // random timeout between 0 and 1000
+        console.log("[findCvByUuid] randomTimeout: ", randomTimeout);
+
         setTimeout(() => {
             if (response) {
                 resolve(response);
             } else {
                 reject(new Error("CV not found"));
             }
-        }, 100);
+        }, randomTimeout);
     });
 }

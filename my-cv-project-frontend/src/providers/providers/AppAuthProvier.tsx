@@ -18,7 +18,7 @@ const AppAuthProvier: React.FC<AppAuthProvierProps> = ({ children }: AppAuthProv
     const appLogin = useCallback(async (username: string, password: string): Promise<UserInfo | null> => {
         showLoading();
         try {
-            console.log("[Login][Start] Login request sent.");
+            console.log("[AppAuthProvier][appLogin][Start] Login request sent.");
             const response: Response = await fetch("http://localhost:8080/login", {
                 method: "POST",
                 headers: {
@@ -29,13 +29,17 @@ const AppAuthProvier: React.FC<AppAuthProvierProps> = ({ children }: AppAuthProv
 
             if (response.ok) {
                 const data: UserInfo = await response.json();
+                console.log("[AppAuthProvider][appLogin] response ok:", data);
                 setCurrentUserInfo(data);
+
+                console.log("[AppAuthProvier][appLogin][End] Login successful.");
                 return data;
             }
 
+            console.log("[AppAuthProvier][appLogin][End] Login failed.");
             return null;
         } catch (error) {
-            console.error("[Login][Error] Login failed:", error);
+            console.error("[AppAuthProvier][appLogin][Error] Login failed:", error);
             return null;
         } finally {
             hideLoading();

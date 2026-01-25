@@ -13,9 +13,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children, className }: AppLayoutP
             <Header />
             <section className="flex flex-1">
                 <Sider />
-                <section className="flex-1">
-                    <main className="px-6 py-2">{children}</main>
-                </section>
+                <main className="p-4 h-full w-full">{children}</main>
             </section>
             <Footer />
         </div>
