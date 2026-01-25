@@ -7,7 +7,7 @@ const LoadingOverlay: React.FC = () => {
     if (!isLoading) return null;
 
     const loadingTextWithDelay = (delay: number): string => {
-        const output: string = `text-white font-mono font-bold text-2xl rounded-full animate-bounce [animation-delay:-${delay}s]`
+        const output: string = `text-white font-bold text-2xl rounded-full animate-bounce [animation-delay:-${delay}s]`
         return output;
     };
 
