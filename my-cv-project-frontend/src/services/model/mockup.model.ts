@@ -11,6 +11,7 @@ export interface PersonalCv {
     publishStatus: boolean,
     imageUrl: string,
     imageUrlFlip: string,
+    downloadLink: string,
     languageCode: string,
     titleName: string,
     firstName: string,
