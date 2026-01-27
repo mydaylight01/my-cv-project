@@ -13,7 +13,7 @@ const LoadingOverlay: React.FC = () => {
 
     if (!isLoading) return null;
     return (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center backdrop-blur-md transition-all duration-500">
+        <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md transition-all duration-500">
             <div className="w-60 h-60 border-r-2 border-t-5 border-indigo-300/60 blur-[1px] rounded-full animate-[spin_1.5s_linear_infinite_reverse]"></div>
 
             <div className="absolute inset-0 flex items-center justify-center space-x-1">

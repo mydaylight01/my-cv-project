@@ -37,7 +37,7 @@ const SkillSetParagraph: React.FC<TemplatePageProps> = ({ data }) => {
             <div className="flex flex-col px-8 py-8 min-h-[400px] bg-[#1E1E1E]">
                 <div className="flex flex-col font-bold items-center justify-center pt-0 md:pt-4">
                     <span className="text-2xl md:text-3xl text-shadow-lg/30">Skills</span>
-                    <hr className="w-9/10 sm:w-4/5 md:w-2/3 border-0.5 md:border-1 border-white mt-4" />
+                    <hr className="w-9/10 sm:w-4/5 md:w-2/3 border-1 border-white mt-4 mb-2 opacity-50" />
                 </div>
                 <div className="flex flex-col items-center justify-evenly">
                     <div className="flex flex-col md:flex-row items-start justify-evenly size-fit md:w-full">

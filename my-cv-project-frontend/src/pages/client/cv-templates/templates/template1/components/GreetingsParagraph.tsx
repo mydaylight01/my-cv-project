@@ -169,7 +169,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                 />
 
                 {/* render for desktop */}
-                <div className="hidden md:flex h-full relative z-10 flex-col items-center justify-center py-10">
+                <div className="hidden md:flex h-full relative flex-col items-center justify-center py-10">
                     <div className="flex flex-row w-full items-center justify-between gap-6 px-10 md:px-20 lg:px-40 xl:px-60 max-w-[1920px]">
                         <div className="flex-1 min-w-0 h-full flex flex-col items-start justify-between py-8 min-h-[300px]">
                             <div className="flex flex-col gap-1">
@@ -199,7 +199,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                 </div>
 
                 {/* render for mobile */}
-                <div className="flex md:hidden h-full relative z-10 flex-col items-center justify-center py-10">
+                <div className="flex md:hidden h-full relative flex-col items-center justify-center py-10">
                     <div className="flex flex-col w-full items-center justify-center">
                         <div className="h-full flex items-center justify-center">
                             {flipCard({

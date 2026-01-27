@@ -22,8 +22,8 @@ const ButtonTemplate: React.FC<ButtonTemplateProps> = ({ label, icon, forPath, s
     const location = useLocation();
 
     const tooltipStyle = {
-        desktop: "md:hidden absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-1.5 bg-gray-800 text-white text-sm font-medium rounded-lg shadow-lg opacity-0 invisible",
-        mobile: "group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50 pointer-events-none",
+        desktop: "md:hidden absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-1.5 bg-gray-800 text-white text-sm font-medium rounded-lg shadow-lg opacity-0 invisible z-[1000]",
+        mobile: "group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-[1000] pointer-events-none",
     }
 
     const highlightForPath = location.pathname === forPath ? "dark:bg-white/90 dark:text-gray-900 bg-gray-100 text-gray-900" : "dark:hover:bg-white/20 hover:bg-gray-800";
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <div id="header-nav" className="relative sticky z-50 top-0 bg-gray-950/50 py-2 px-4 md:px-6 backdrop-blur-sm flex items-center justify-between">
+            <div id="header-nav" className="relative sticky z-[1000] top-0 bg-gray-950/50 py-2 px-4 md:px-6 backdrop-blur-sm flex items-center justify-between">
                 <div id="header-nav-left" className="flex items-center gap-2 md:gap-6">
                     <div id="header-nav-left-icon" className="flex items-center">
                         <IoMenu size={26} className="hover:text-gray-400 hover:cursor-pointer hover:translate-x-1 transition-all duration-300 ease-in-out" />
