@@ -123,12 +123,12 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
             case "Phone":
                 renderedItem = (
                     <Fragment>
-                        <a href={`tel:${item?.link}`} target="_blank" rel="noopener noreferrer" className="block md:hidden font-semibold text-blue-300 hover:underline hover:underline-offset-4">{item?.contactInfo}</a>
-                        <div className="hidden md:flex flex-row items-center gap-x-2 font-semibold">
+                        <a href={`tel:${item?.link}`} target="_blank" rel="noopener noreferrer" className="block md:hidden font-semibold text-blue-300 hover:underline hover:underline-offset-4 text-sm md:text-base">{item?.contactInfo}</a>
+                        <div className="hidden md:flex flex-row items-center gap-x-2 font-semibold text-sm md:text-base">
                             {item?.contactInfo}
                             <span
                                 id={`copy-${item?.contactTypeName}-${item?.sequence}`}
-                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out"
+                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out text-xs md:text-base"
                                 onClick={() => copyToClipboard(item)}>
                                 {checkCopyStatus(item) ? <FaCheckCircle size={16} /> : <FaCopy size={16} />}
                             </span>
@@ -139,15 +139,15 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
             default:
                 if (item?.link) {
                     renderedItem = (
-                        <a href={`${item?.link}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-300 hover:underline hover:underline-offset-4">{item?.contactInfo}</a>
+                        <a href={`${item?.link}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-300 hover:underline hover:underline-offset-4 text-sm md:text-base">{item?.contactInfo}</a>
                     )
                 } else {
                     renderedItem = (
-                        <div className="flex flex-row items-center gap-x-2 font-semibold">
+                        <div className="flex flex-row items-center gap-x-2 font-semibold text-sm md:text-base">
                             {item?.contactInfo}
                             <span
                                 id={`copy-${item?.contactTypeName}-${item?.sequence}`}
-                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out"
+                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out text-xs md:text-base"
                                 onClick={() => copyToClipboard(item)}>
                                 {checkCopyStatus(item) ? <FaCheckCircle size={16} /> : <FaCopy size={16} />}
                             </span>
@@ -162,7 +162,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center relative w-full h-full min-h-[700px] md:min-h-[600px] overflow-hidden">
+            <div className="flex flex-col items-center justify-center relative w-full h-full min-h-[650px] md:min-h-[600px] overflow-hidden">
                 <div
                     className={`absolute inset-0 bg-cover bg-center bg-no-repeat ${blurLevel()}`}
                     style={{ backgroundImage: `url(${paragraphBackground?.imageUrl})` }}

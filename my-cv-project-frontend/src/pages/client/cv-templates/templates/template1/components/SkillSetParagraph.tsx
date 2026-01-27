@@ -20,7 +20,7 @@ const SkillSetParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                     {item?.skills?.map((skill: Skills, skillIndex: number) => (
                         <div
                             key={`${side}_skill_${skillSetIndex}_${skillIndex}`}
-                            className={`flex flex-row ${skill?.isHighlight ? "font-bold" : ""}`}
+                            className={`flex flex-row text-sm md:text-base ${skill?.isHighlight ? "font-bold" : ""}`}
                         >
                             &nbsp;&nbsp;
                             <li>{skill?.skillContent}</li>
@@ -34,10 +34,10 @@ const SkillSetParagraph: React.FC<TemplatePageProps> = ({ data }) => {
 
     return (
         <>
-            <div className="flex flex-col px-10 py-10 min-h-[400px]">
-                <div className="flex flex-col text-2xl font-bold items-center justify-center pt-6">
-                    <span>Skills</span>
-                    <hr className="w-3/4 sm:w-3/5 md:w-1/2 border-1 border-white mt-4" />
+            <div className="flex flex-col px-8 py-8 min-h-[400px]">
+                <div className="flex flex-col font-bold items-center justify-center pt-0 md:pt-4">
+                    <span className="text-xl md:text-2xl">Skills</span>
+                    <hr className="w-3/4 sm:w-3/5 md:w-1/2 border-0.5 md:border-1 border-white mt-4" />
                 </div>
                 <div className="flex flex-col items-center justify-evenly">
                     <div className="flex flex-col md:flex-row items-start justify-evenly size-fit md:w-full">
