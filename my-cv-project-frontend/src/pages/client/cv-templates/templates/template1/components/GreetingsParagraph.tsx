@@ -1,7 +1,7 @@
-import { useMemo } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { toast } from "react-toastify";
 
-import { FaCopy } from "react-icons/fa";
+import { FaCopy, FaCheckCircle } from "react-icons/fa";
 
 import type { Contact, ParagraphBgImg } from "../../../../../../services/model/mockup.model";
 import type { TemplatePageProps } from "../../template.interface";
@@ -9,6 +9,8 @@ import { socialIconMap } from "../../../../../../components/utils/SocialIconMapp
 import type { SocialIcon } from "../../../../../../constants/social";
 
 const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
+    const [copyStatusMap, setCopyStatusMap] = useState<{ [key: string]: boolean }>({});
+
     const paragraphBackground: ParagraphBgImg | undefined = useMemo(() => {
         try {
             // console.log("[Template 1][GreetingsParagraph][Start] data?.paragraphBgImg:", data?.paragraphBgImg);
@@ -66,15 +68,31 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
         }
     };
 
-    const copyToClipboard = (text: string) => {
+    const copyToClipboard = (item: Contact) => {
         try {
-            // console.log("[Template 1][GreetingsParagraph][Start] text:", text);
+            if (copyStatusMap[item?.contactTypeName]) return;
 
-            navigator.clipboard.writeText(text.trim());
-            toast.success(`${text} Copied to clipboard`);
-            // console.log("[Template 1][GreetingsParagraph][End] text copied to clipboard");
+            navigator.clipboard.writeText(item?.contactInfo.trim());
+            setCopyStatusMap((prev) => ({ ...prev, [item?.contactTypeName]: true }));
+
+            toast.success("Copied to clipboard");
+
+            setTimeout(() => {
+                setCopyStatusMap((prev) => ({ ...prev, [item?.contactTypeName]: false }));
+            }, 2000);
         } catch (error) {
             console.error("[Template 1][GreetingsParagraph][Error] error:", error);
+        }
+    };
+
+    const checkCopyStatus = (item: Contact): boolean => {
+        try {
+            const result: boolean = copyStatusMap[item?.contactTypeName] || false;
+
+            return result;
+        } catch (error) {
+            console.error("[Template 1][GreetingsParagraph][Error] error:", error);
+            return false;
         }
     };
 
@@ -97,6 +115,50 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
             </>
         )
     };
+
+    const renderContactItem = (item: Contact) => {
+        let renderedItem: React.ReactNode;
+
+        switch (item.contactTypeName) {
+            case "Phone":
+                renderedItem = (
+                    <Fragment>
+                        <a href={`tel:${item?.link}`} target="_blank" rel="noopener noreferrer" className="block md:hidden font-semibold text-blue-300 hover:underline hover:underline-offset-4">{item?.contactInfo}</a>
+                        <div className="hidden md:flex flex-row items-center gap-x-2 font-semibold">
+                            {item?.contactInfo}
+                            <span
+                                id={`copy-${item?.contactTypeName}-${item?.sequence}`}
+                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out"
+                                onClick={() => copyToClipboard(item)}>
+                                {checkCopyStatus(item) ? <FaCheckCircle size={16} /> : <FaCopy size={16} />}
+                            </span>
+                        </div>
+                    </Fragment>
+                )
+                break;
+            default:
+                if (item?.link) {
+                    renderedItem = (
+                        <a href={`${item?.link}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-300 hover:underline hover:underline-offset-4">{item?.contactInfo}</a>
+                    )
+                } else {
+                    renderedItem = (
+                        <div className="flex flex-row items-center gap-x-2 font-semibold">
+                            {item?.contactInfo}
+                            <span
+                                id={`copy-${item?.contactTypeName}-${item?.sequence}`}
+                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out"
+                                onClick={() => copyToClipboard(item)}>
+                                {checkCopyStatus(item) ? <FaCheckCircle size={16} /> : <FaCopy size={16} />}
+                            </span>
+                        </div>
+                    )
+                }
+                break;
+        }
+
+        return renderedItem;
+    }
 
     return (
         <>
@@ -121,16 +183,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                                             <div className="flex items-center justify-center">
                                                 {displayIcon(item?.icon)}
                                             </div>
-                                            {
-                                                item?.link ? (
-                                                    <a href={item?.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline hover:underline-offset-4 text-blue-300 transition-all duration-300 ease-in-out">{item?.contactInfo}</a>
-                                                ) : (
-                                                    <div className="flex flex-row items-center gap-x-2 font-semibold">
-                                                        {item?.contactInfo}
-                                                        <span className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out" onClick={() => copyToClipboard(item?.contactInfo)}><FaCopy size={16} /></span>
-                                                    </div>
-                                                )
-                                            }
+                                            {renderContactItem(item)}
                                         </div>
                                     ))
                                 }
@@ -166,15 +219,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                                             <div className="flex items-center justify-center">
                                                 {displayIcon(item?.icon, 20)}
                                             </div>
-                                            {
-                                                item?.link ? (
-                                                    <a href={item?.link} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-300 hover:underline hover:underline-offset-4">{item?.contactInfo}</a>
-                                                ) : (
-                                                    <div className="flex flex-row items-center gap-x-2 font-semibold">
-                                                        {item?.contactInfo}
-                                                    </div>
-                                                )
-                                            }
+                                            {renderContactItem(item)}
                                         </div>
                                     ))
                                 }

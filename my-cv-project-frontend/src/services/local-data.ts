@@ -26,7 +26,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
         contact: [
             {
                 contactTypeName: "Phone",
-                link: "",
+                link: "0639349554",
                 contactInfo: "063-934-9554",
                 side: "",
                 sequence: 1,
