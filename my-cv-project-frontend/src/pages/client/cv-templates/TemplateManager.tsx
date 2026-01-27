@@ -1,5 +1,5 @@
 import { Blank } from "../../../components";
-import { Template1Page, Template2Page } from "./templates";
+import { Template1Page } from "./templates";
 
 import type { MyCvData } from "../../../services/model/mockup.model";
 
@@ -20,9 +20,6 @@ const TemplateManager: React.FC<TemplateManagerProps> = ({
             case "template1":
                 console.log("[TemplateManager][renderTemplate][End] template1");
                 return <Template1Page data={cvData} />
-            case "template2":
-                console.log("[TemplateManager][renderTemplate][End] template2");
-                return <Template2Page data={cvData} />
             default:
                 console.log("[TemplateManager][renderTemplate][End] unknown templateCode");
                 return <Blank />;
