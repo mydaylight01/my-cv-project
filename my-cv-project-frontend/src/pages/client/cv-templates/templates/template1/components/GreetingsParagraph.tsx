@@ -70,7 +70,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
         try {
             // console.log("[Template 1][GreetingsParagraph][Start] text:", text);
 
-            navigator.clipboard.writeText(text);
+            navigator.clipboard.writeText(text.trim());
             toast.success(`${text} Copied to clipboard`);
             // console.log("[Template 1][GreetingsParagraph][End] text copied to clipboard");
         } catch (error) {
@@ -109,7 +109,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                 {/* render for desktop */}
                 <div className="hidden md:flex h-full relative z-10 flex-col items-center justify-center py-10">
                     <div className="flex flex-row w-full items-center justify-between gap-6 px-10 md:px-20 lg:px-40 xl:px-60 max-w-[1920px]">
-                        <div className="flex-1 min-w-0 h-full flex flex-col items-start justify-between py-8">
+                        <div className="flex-1 min-w-0 h-full flex flex-col items-start justify-between py-8 min-h-[300px]">
                             <div className="flex flex-col gap-1">
                                 <div className="text-3xl md:text-4xl lg:text-5xl font-bold">{`${data?.titleName}${data?.firstName} ${data?.lastName}`}</div>
                                 <div className="text-xl md:text-2xl lg:text-3xl font-bold">{data?.jobPosition}</div>
@@ -123,7 +123,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                                             </div>
                                             {
                                                 item?.link ? (
-                                                    <a href={item?.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline hover:text-blue-300 transition-all duration-300 ease-in-out">{item?.contactInfo}</a>
+                                                    <a href={item?.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline hover:underline-offset-4 text-blue-300 transition-all duration-300 ease-in-out">{item?.contactInfo}</a>
                                                 ) : (
                                                     <div className="flex flex-row items-center gap-x-2 font-semibold">
                                                         {item?.contactInfo}
@@ -149,9 +149,10 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                 <div className="flex md:hidden h-full relative z-10 flex-col items-center justify-center py-10">
                     <div className="flex flex-col w-full items-center justify-center">
                         <div className="h-full flex items-center justify-center">
-                            <div className="flex-shrink-0 w-48 h-48 rounded-full overflow-hidden shadow-xl shadow-gray-950/30">
-                                <img src={data?.imageUrlFlip} className="w-full h-full object-cover" alt="profile" />
-                            </div>
+                            {flipCard({
+                                imageUrl: data?.imageUrl,
+                                imageUrlFlip: data?.imageUrlFlip
+                            })}
                         </div>
                         <div className="flex-1 min-w-0 flex flex-col py-8">
                             <div className="flex flex-col items-center gap-1">
@@ -167,7 +168,7 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                                             </div>
                                             {
                                                 item?.link ? (
-                                                    <a href={item?.link} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-300">{item?.contactInfo}</a>
+                                                    <a href={item?.link} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-300 hover:underline hover:underline-offset-4">{item?.contactInfo}</a>
                                                 ) : (
                                                     <div className="flex flex-row items-center gap-x-2 font-semibold">
                                                         {item?.contactInfo}

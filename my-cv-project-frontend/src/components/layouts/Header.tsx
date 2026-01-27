@@ -65,7 +65,7 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <div id="header-nav" className="relative sticky z-50 bg-gray-950/50 py-2 px-4 md:px-6 backdrop-blur-sm flex items-center justify-between">
+            <div id="header-nav" className="relative sticky z-50 top-0 bg-gray-950/50 py-2 px-4 md:px-6 backdrop-blur-sm flex items-center justify-between">
                 <div id="header-nav-left" className="flex items-center gap-2 md:gap-6">
                     <div id="header-nav-left-icon" className="flex items-center">
                         <IoMenu size={26} className="hover:text-gray-400 hover:cursor-pointer hover:translate-x-1 transition-all duration-300 ease-in-out" />

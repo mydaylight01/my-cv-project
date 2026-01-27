@@ -33,7 +33,7 @@ const RouteManager: React.FC = () => {
     const blankPage: React.ReactNode = <Blank />
 
     return (
-        <div className="flex flex-col h-screen w-screen">
+        <div className="flex flex-col h-screen">
             <ScrollTop />
             <LoadingOverlay />
             <Routes>

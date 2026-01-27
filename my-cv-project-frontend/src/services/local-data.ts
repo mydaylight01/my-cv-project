@@ -8,8 +8,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
         uuid: "mydaylight",
         cvName: "Mockup CV 1",
         publishStatus: false,
-        imageUrl: "https://krita-artists.org/uploads/default/original/3X/c/f/cfc4990e32f31acd695481944f2163e96ff7c6ba.jpeg",
-        imageUrlFlip: "https://lh3.googleusercontent.com/d/1h_5aaDk0JC4-kPki7zHRnbd549HGazNC",
+        imageUrl: "https://lh3.googleusercontent.com/d/1h_5aaDk0JC4-kPki7zHRnbd549HGazNC",
+        imageUrlFlip: "https://lh3.googleusercontent.com/d/1adxpp846LrZtuCE4tu1gtL_t8vVLXrFi",
         languageCode: "TH",
         titleName: "",
         firstName: "Natthawut",
@@ -28,15 +28,15 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 contactTypeName: "Phone",
                 link: "",
                 contactInfo: "063-934-9554",
-                side: "L",
+                side: "",
                 sequence: 1,
                 icon: "telephone"
             },
             {
                 contactTypeName: "Email",
                 link: "",
-                contactInfo: "natthawut.sangsee@gmail.com",
-                side: "L",
+                contactInfo: "sangsee.natthawut@gmail.com",
+                side: "",
                 sequence: 2,
                 icon: "envelope"
             },
@@ -44,23 +44,31 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 contactTypeName: "Github",
                 link: "https://github.com/mydaylight01",
                 contactInfo: "mydaylight01",
-                side: "R",
-                sequence: 1,
+                side: "",
+                sequence: 3,
                 icon: "github"
             },
             {
                 contactTypeName: "LinkedIn",
-                link: "www.linkedin.com/in/my-natthawut-sangsee",
+                link: "https://www.linkedin.com/in/my-natthawut-sangsee",
                 contactInfo: "my-natthawut-sangsee",
-                side: "R",
-                sequence: 2,
+                side: "",
+                sequence: 4,
                 icon: "linkedin"
-            }
+            },
+            {
+                contactTypeName: "Line",
+                link: "",
+                contactInfo: "063-934-9554",
+                side: "",
+                sequence: 5,
+                icon: "line"
+            },
         ],
         summary: [
             {
                 paragraph: 1,
-                content: "Full Stack Developer with almost 2 years of experience Familiar with front-end development using Angular and React, as well as back-end development using Java Spring Boot, C# and Node.js",
+                content: "Full Stack Developer with 2 years of experience Familiar with front-end development using Angular and React, as well as back-end development using Java Spring Boot, C# and Node.js",
                 isBlank: false
             },
             {
@@ -68,11 +76,6 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 content: "Experienced in collaborating on team projects and providing technical support. Capable of creating API documentation, implementing fundamental security measures, and contributing to system performance improvements.",
                 isBlank: false
             },
-            {
-                paragraph: 3,
-                content: "Additionally, skilled in delivering clear and structured training sessions, as well as assisting with technical guidance and mentorship.",
-                isBlank: false
-            }
         ],
         skillSet: [
             {

@@ -4,7 +4,7 @@ interface AuthLayoutProps {
 }
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({ children, className }: AuthLayoutProps) => {
-    const overrideClassName: string = className ?? "flex flex-col h-screen w-screen";
+    const overrideClassName: string = className ?? "flex flex-col h-full w-full";
 
     return (
         <div className={overrideClassName}>
