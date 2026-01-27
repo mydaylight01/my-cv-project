@@ -6,7 +6,7 @@ interface AppLayoutProps {
 }
 
 const AppLayout: React.FC<AppLayoutProps> = ({ children, className }: AppLayoutProps) => {
-    const overrideClassName: string = className ?? "flex flex-col h-full w-full";
+    const overrideClassName: string = className ?? "flex flex-col min-h-screen w-full";
 
     return (
         <div className={overrideClassName}>

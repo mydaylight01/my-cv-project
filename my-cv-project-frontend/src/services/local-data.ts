@@ -461,21 +461,21 @@ const myCvDataTemplate: Array<MyCvData> = [{
             {
                 achievementName: "Tuksom Garage",
                 description: "Represented team as a pitcher in a pitching idea competition (One Stop Service Platform for C2C)",
-                achievementDate: null,
+                achievementDate: new Date("2025-07-01"),
                 sequence: 1,
                 link: ""
             },
             {
                 achievementName: "Company & Team Knowledge Sharing Session",
                 description: "Contributed to knowledge-sharing sessions to enhance team productivity.",
-                achievementDate: null,
+                achievementDate: new Date("2025-11-01"),
                 sequence: 2,
                 link: ""
             },
             {
                 achievementName: "Internship Student Guidance",
                 description: "Provided guidance and training for internship students in each batch on fundamental programming topics",
-                achievementDate: null,
+                achievementDate: new Date("2025-05-01"),
                 sequence: 3,
                 link: ""
             }

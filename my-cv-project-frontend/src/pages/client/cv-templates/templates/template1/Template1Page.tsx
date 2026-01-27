@@ -5,9 +5,9 @@ import {
     SummaryParagraph,
     WorkExperienceParagraph,
     SkillSetParagraph,
-    // AchievementParagraph,
-    LanguageSkillParagraph,
-    EducationExperienceParagraph,
+    AchievementParagraph,
+    // LanguageSkillParagraph,
+    // EducationExperienceParagraph,
 } from "./components";
 
 const Template1Page: React.FC<TemplatePageProps> = ({ data }) => {
@@ -23,9 +23,9 @@ const Template1Page: React.FC<TemplatePageProps> = ({ data }) => {
                 <SummaryParagraph data={data} />
                 <SkillSetParagraph data={data} />
                 <WorkExperienceParagraph data={data} />
-                {/* <AchievementParagraph data={data} /> */}
-                <LanguageSkillParagraph data={data} />
-                <EducationExperienceParagraph data={data} />
+                <AchievementParagraph data={data} />
+                {/* <LanguageSkillParagraph data={data} /> */}
+                {/* <EducationExperienceParagraph data={data} /> */}
             </div>
         </>
     );
