@@ -123,12 +123,12 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
             case "Phone":
                 renderedItem = (
                     <Fragment>
-                        <a href={`tel:${item?.link}`} target="_blank" rel="noopener noreferrer" className="block md:hidden font-semibold text-blue-300 hover:underline hover:underline-offset-4 text-sm md:text-base">{item?.contactInfo}</a>
-                        <div className="hidden md:flex flex-row items-center gap-x-2 font-semibold text-sm md:text-base">
+                        <a href={`tel:${item?.link}`} target="_blank" rel="noopener noreferrer" className="block md:hidden font-semibold text-blue-300 hover:underline hover:underline-offset-4 text-sm md:text-base text-shadow-lg/10">{item?.contactInfo}</a>
+                        <div className="hidden md:flex flex-row items-center gap-x-2 font-semibold text-sm md:text-base text-shadow-lg/10">
                             {item?.contactInfo}
                             <span
                                 id={`copy-${item?.contactTypeName}-${item?.sequence}`}
-                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out text-xs md:text-base"
+                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out text-xs md:text-base text-shadow-lg/10"
                                 onClick={() => copyToClipboard(item)}>
                                 {checkCopyStatus(item) ? <FaCheckCircle size={16} /> : <FaCopy size={16} />}
                             </span>
@@ -139,15 +139,15 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
             default:
                 if (item?.link) {
                     renderedItem = (
-                        <a href={`${item?.link}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-300 hover:underline hover:underline-offset-4 text-sm md:text-base">{item?.contactInfo}</a>
+                        <a href={`${item?.link}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-300 hover:underline hover:underline-offset-4 text-sm md:text-base text-shadow-lg/10">{item?.contactInfo}</a>
                     )
                 } else {
                     renderedItem = (
-                        <div className="flex flex-row items-center gap-x-2 font-semibold text-sm md:text-base">
+                        <div className="flex flex-row items-center gap-x-2 font-semibold text-sm md:text-base text-shadow-lg/10">
                             {item?.contactInfo}
                             <span
                                 id={`copy-${item?.contactTypeName}-${item?.sequence}`}
-                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out text-xs md:text-base"
+                                className="cursor-pointer hover:text-blue-400 transition-all duration-300 ease-in-out text-xs md:text-base text-shadow-lg/10"
                                 onClick={() => copyToClipboard(item)}>
                                 {checkCopyStatus(item) ? <FaCheckCircle size={16} /> : <FaCopy size={16} />}
                             </span>
@@ -173,8 +173,8 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                     <div className="flex flex-row w-full items-center justify-between gap-6 px-10 md:px-20 lg:px-40 xl:px-60 max-w-[1920px]">
                         <div className="flex-1 min-w-0 h-full flex flex-col items-start justify-between py-8 min-h-[300px]">
                             <div className="flex flex-col gap-1">
-                                <div className="text-3xl md:text-4xl lg:text-5xl font-bold">{`${data?.titleName}${data?.firstName} ${data?.lastName}`}</div>
-                                <div className="text-xl md:text-2xl lg:text-3xl font-bold">{data?.jobPosition}</div>
+                                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-shadow-lg/20">{`${data?.titleName}${data?.firstName} ${data?.lastName}`}</div>
+                                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-shadow-lg/20">{data?.jobPosition}</div>
                             </div>
                             <div className="flex flex-wrap gap-x-8 gap-y-3 mt-10">
                                 {
