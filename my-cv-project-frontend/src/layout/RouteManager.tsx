@@ -6,7 +6,7 @@ import { useAppAuthHook } from '../providers/hooks/useAppAuth';
 
 // Components & Layouts (Outside to Inside)
 import { AppLayout, AuthLayout, CustomLayout } from "./layouts";
-import { Blank, ErrorElement, NotFound } from "../components";
+import { ErrorElement, NotFound } from "../components";
 import { LoadingOverlay, ScrollTop } from "../components/utils";
 
 // Local Constants / Config / Types
@@ -29,8 +29,6 @@ const RouteManager: React.FC = () => {
     const isAuthenticated: boolean = currentUserInfo !== null;
 
     const errorElement: React.ReactNode = <ErrorElement />
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const blankPage: React.ReactNode = <Blank />
 
     return (
         <div className="flex flex-col h-screen">
