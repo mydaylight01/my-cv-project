@@ -18,3 +18,10 @@ So I decided to design a class diagram for this project. base on my own cv.
 and now I'm working on my first idea. let's try frontend!
 
 This project is building with vite as frontend but backend is not decided yet.
+
+[27/01/2026]
+### Half a month passed, Now I have "Contact" page!
+After try many things, I finally done some parts of Contact page.
+And hey, I just try to upload my picture to Vercel, but I just found a way to deploy my project so easily.
+
+if you wanna try playing my website, you can click here -> [https://my-cv-project-sooty.vercel.app/](https://my-cv-project-sooty.vercel.app/)
