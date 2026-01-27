@@ -209,8 +209,8 @@ const GreetingsParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                         </div>
                         <div className="flex-1 min-w-0 flex flex-col py-8">
                             <div className="flex flex-col items-center gap-1">
-                                <div className="text-2xl font-bold">{`${data?.titleName}${data?.firstName} ${data?.lastName}`}</div>
-                                <div className="text-xl font-bold">{data?.jobPosition}</div>
+                                <div className="text-3xl font-bold">{`${data?.titleName}${data?.firstName} ${data?.lastName}`}</div>
+                                <div className="text-2xl font-bold">{data?.jobPosition}</div>
                             </div>
                             <div className="flex flex-col px-3 gap-y-3 mt-10">
                                 {

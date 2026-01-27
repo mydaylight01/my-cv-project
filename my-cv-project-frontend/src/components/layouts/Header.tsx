@@ -70,7 +70,7 @@ const Header: React.FC = () => {
                     <div id="header-nav-left-icon" className="flex items-center">
                         <IoMenu size={26} className="hover:text-gray-400 hover:cursor-pointer hover:translate-x-1 transition-all duration-300 ease-in-out" />
                     </div>
-                    <div id="header-nav-left-menu" className="flex items-center md:gap-3">
+                    <div id="header-nav-left-menu" className="flex items-center gap-1 md:gap-3">
                         <ButtonTemplate
                             icon={<FaHome size={26} />}
                             label="Home"

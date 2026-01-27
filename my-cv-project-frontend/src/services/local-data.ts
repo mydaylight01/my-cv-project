@@ -10,6 +10,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
         publishStatus: false,
         imageUrl: "https://lh3.googleusercontent.com/d/1h_5aaDk0JC4-kPki7zHRnbd549HGazNC",
         imageUrlFlip: "https://lh3.googleusercontent.com/d/1adxpp846LrZtuCE4tu1gtL_t8vVLXrFi",
+        downloadLink: "",
         languageCode: "TH",
         titleName: "",
         firstName: "Natthawut",

@@ -23,7 +23,6 @@ const Template1Page: React.FC<TemplatePageProps> = ({ data }) => {
                 <SummaryParagraph data={data} />
                 <SkillSetParagraph data={data} />
                 <WorkExperienceParagraph data={data} />
-                <LanguageSkillParagraph data={data} />
                 <AchievementParagraph data={data} />
                 <LanguageSkillParagraph data={data} />
                 <EducationExperienceParagraph data={data} />
