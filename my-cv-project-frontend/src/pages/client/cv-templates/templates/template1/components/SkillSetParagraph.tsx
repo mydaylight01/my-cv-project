@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import type { Skills, SkillSet } from "../../../../../../services/model/mockup.model";
 import type { TemplatePageProps } from "../../template.interface";
 
@@ -6,20 +6,26 @@ const SkillSetParagraph: React.FC<TemplatePageProps> = ({ data }) => {
     const skillSetLeftSide = useMemo(() => data?.skillSet?.filter((item: SkillSet) => item?.paragraphSide == "L").sort((item: SkillSet) => item?.sequence), [data]);
     const skillSetRightSide = useMemo(() => data?.skillSet?.filter((item: SkillSet) => item?.paragraphSide == "R").sort((item: SkillSet) => item?.sequence), [data]);
 
-    const renderSkillSet = (skillSet: SkillSet[]) => {
-        return skillSet?.map((item: SkillSet, index: number) => (
-            <>
-                <p key={index}>{item?.skillSetName}</p>
-                <div className="flex flex-col pb-8">
-                    {
-                        item?.skills?.map((skill: Skills, index: number) => (
-                            <div key={index} className={`flex flex-row ${skill?.isHighlight ? "font-bold" : ""}`}>&nbsp;&nbsp;<li key={index}>{skill?.skillContent}</li></div>
-                        ))
-                    }
+    const renderSkillSet = (skillSet: SkillSet[], side: string) => {
+        return skillSet?.map((item: SkillSet, skillSetIndex: number) => (
+            <React.Fragment key={`${side}_skillset_${skillSetIndex}`}>
+                <p>{item?.skillSetName}</p>
+
+                <div className="flex flex-col mb-8">
+                    {item?.skills?.map((skill: Skills, skillIndex: number) => (
+                        <div
+                            key={`${side}_skill_${skillSetIndex}_${skillIndex}`}
+                            className={`flex flex-row ${skill?.isHighlight ? "font-bold" : ""}`}
+                        >
+                            &nbsp;&nbsp;
+                            <li>{skill?.skillContent}</li>
+                        </div>
+                    ))}
                 </div>
-            </>
+            </React.Fragment>
         ));
     };
+
 
     return (
         <>
@@ -30,10 +36,12 @@ const SkillSetParagraph: React.FC<TemplatePageProps> = ({ data }) => {
                 </div>
                 <div className="flex flex-col md:flex-row items-start justify-evenly">
                     <div className="flex flex-col">
-                        {renderSkillSet(skillSetLeftSide)}
+                        {/* Left Side */}
+                        {renderSkillSet(skillSetLeftSide, "L")}
                     </div>
                     <div className="flex flex-col">
-                        {renderSkillSet(skillSetRightSide)}
+                        {/* Right Side */}
+                        {renderSkillSet(skillSetRightSide, "R")}
                     </div>
                 </div>
             </div>
