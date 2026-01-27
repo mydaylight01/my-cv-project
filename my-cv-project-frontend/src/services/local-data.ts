@@ -26,7 +26,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
         contact: [
             {
                 contactTypeName: "Phone",
-                link: "",
+                link: "0639349554",
                 contactInfo: "063-934-9554",
                 side: "",
                 sequence: 1,
@@ -76,6 +76,11 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 content: "Experienced in collaborating on team projects and providing technical support. Capable of creating API documentation, implementing fundamental security measures, and contributing to system performance improvements.",
                 isBlank: false
             },
+            {
+                paragraph: 3,
+                content: "Additionally, skilled in delivering clear and structured training sessions, as well as assisting with technical guidance and mentorship.",
+                isBlank: false
+            }
         ],
         skillSet: [
             {
@@ -273,7 +278,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 1,
                         projectName: "Human Resources Management System with sales requirements",
-                        projectStartDate: null,
+                        projectStartDate: new Date("2025-04-01"),
                         projectEndDate: null,
                         projectDescription: [
                             {
@@ -293,8 +298,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 2,
                         projectName: "Cash Reconcile System",
-                        projectStartDate: null,
-                        projectEndDate: null,
+                        projectStartDate: new Date("2025-03-01"),
+                        projectEndDate: new Date("2025-10-01"),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -313,8 +318,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 3,
                         projectName: "Company Website Design",
-                        projectStartDate: null,
-                        projectEndDate: null,
+                        projectStartDate: new Date("2025-05-01"),
+                        projectEndDate: new Date("2025-06-01"),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -325,8 +330,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 4,
                         projectName: "Broadcast Content Management System",
-                        projectStartDate: null,
-                        projectEndDate: null,
+                        projectStartDate: new Date("2024-11-01"),
+                        projectEndDate: new Date("2025-02-01"),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -345,8 +350,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 5,
                         projectName: "Customer Relationship Management with Survey & Notification",
-                        projectStartDate: null,
-                        projectEndDate: null,
+                        projectStartDate: new Date("2024-08-01"),
+                        projectEndDate: new Date("2025-03-01"),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -361,8 +366,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 6,
                         projectName: "Human Resources Management System Package",
-                        projectStartDate: null,
-                        projectEndDate: null,
+                        projectStartDate: new Date("2024-07-01"),
+                        projectEndDate: new Date("2025-04-01"),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -381,8 +386,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 7,
                         projectName: "Digital-Procurement System",
-                        projectStartDate: null,
-                        projectEndDate: null,
+                        projectStartDate: new Date("2024-04-01"),
+                        projectEndDate: new Date("2024-08-01"),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -409,14 +414,14 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 jobDescription: "Soft Square International Co. ltd",
                 workplaceName: "",
                 sequence: 1,
-                workStartDate: new Date("2026-01-18"),
-                workEndDate: new Date("2026-01-18"),
+                workStartDate: new Date("2024-11-01"),
+                workEndDate: new Date("2025-04-01"),
                 projects: [
                     {
                         sequence: 1,
                         projectName: "Purchase Order and Invoice Management System",
-                        projectStartDate: null,
-                        projectEndDate: null,
+                        projectStartDate: new Date("2023-02-01"),
+                        projectEndDate: new Date("2023-03-01"),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -435,8 +440,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 2,
                         projectName: "Account Receivable System",
-                        projectStartDate: null,
-                        projectEndDate: null,
+                        projectStartDate: new Date("2023-12-01"),
+                        projectEndDate: new Date("2024-04-01"),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
