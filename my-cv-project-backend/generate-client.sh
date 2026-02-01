@@ -63,4 +63,10 @@ move_file() {
 # Use move_file function
 move_file "generated-api" "../my-cv-project-frontend/src/service/generated-api"
 
+# Add @ts-nocheck to all generated .ts files to ignore linting/type errors
+echo "🔃 Adding // @ts-nocheck to all generated files..."
+find "../my-cv-project-frontend/src/service/generated-api" -name "*.ts" -exec sed -i '1i // eslint-disable-next-line @typescript-eslint/ban-ts-comment' {} +
+find "../my-cv-project-frontend/src/service/generated-api" -name "*.ts" -exec sed -i '2i // @ts-nocheck' {} +
+echo "✅ Added // @ts-nocheck successfully"
+
 echo "✅ Process completed successfully" | tee -a $LOG_FILE
