@@ -1,0 +1,9 @@
+.openapi-generator-ignore
+apis/HealthCheckApi.ts
+apis/index.ts
+docs/HealthCheckApi.md
+docs/HealthCheckResponse.md
+index.ts
+models/HealthCheckResponse.ts
+models/index.ts
+runtime.ts
