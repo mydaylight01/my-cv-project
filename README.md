@@ -25,3 +25,8 @@ After try many things, I finally done some parts of Contact page.
 And hey, I just try to upload my picture to Vercel, but I just found a way to deploy my project so easily.
 
 if you wanna try playing my website, you can click here -> [https://my-cv-project-sooty.vercel.app/](https://my-cv-project-sooty.vercel.app/)
+
+[01/02/2026]
+### Backend is here!
+I finally done my backend set up using ExpressJs and TypeORM. and I also create a database for it using PostgreSQL.
+Now test moving personal info to database. And I'll deploy my backend somewhere free.

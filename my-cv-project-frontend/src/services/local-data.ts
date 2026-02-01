@@ -7,11 +7,11 @@ const myCvDataTemplate: Array<MyCvData> = [{
         id: 1,
         uuid: "mydaylight",
         cvName: "Mockup CV 1",
-        publishStatus: false,
+        publishStatus: true,
         imageUrl: "https://lh3.googleusercontent.com/d/1h_5aaDk0JC4-kPki7zHRnbd549HGazNC",
         imageUrlFlip: "https://lh3.googleusercontent.com/d/1adxpp846LrZtuCE4tu1gtL_t8vVLXrFi",
         downloadLink: "",
-        languageCode: "TH",
+        languageCode: "EN",
         titleName: "",
         firstName: "Natthawut",
         lastName: "SANGSEE",
@@ -122,7 +122,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
             {
                 paragraphSide: "L",
                 sequence: 2,
-                skillSetName: "Front-End Frameworks / Library",
+                skillSetName: "Front-End Frameworks / Library:",
                 skills: [
                     {
                         skillContent: "Angular",
@@ -273,8 +273,9 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 jobDescription: "Full Stack Developer at Soft Square International Co. ltd",
                 workplaceName: "Soft Square International Co. ltd",
                 sequence: 1,
-                workStartDate: new Date("2026-01-18"),
+                workStartDate: new Date("2024-04-01"),
                 workEndDate: null,
+                isPresent: true,
                 projects: [
                     {
                         sequence: 1,
@@ -412,9 +413,10 @@ const myCvDataTemplate: Array<MyCvData> = [{
             },
             {
                 jobPositionName: "Full Stack Developer (Internship)",
-                jobDescription: "Soft Square International Co. ltd",
-                workplaceName: "",
+                jobDescription: "Full Stack Developer (Internship) at Soft Square International Co. ltd",
+                workplaceName: "Soft Square International Co. ltd",
                 sequence: 1,
+                isPresent: false,
                 workStartDate: new Date("2024-11-01"),
                 workEndDate: new Date("2025-04-01"),
                 projects: [
