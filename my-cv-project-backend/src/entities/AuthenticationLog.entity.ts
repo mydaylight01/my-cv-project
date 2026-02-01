@@ -1,8 +1,11 @@
-import { Column, Entity } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { AuditEntity } from "./base/AuditEntity.entity";
 
 @Entity("authentication_logs")
-export class AuthenticationLog extends AuditEntity {
+export class AuthenticationLogEntity extends AuditEntity {
+    @PrimaryGeneratedColumn("increment", { name: "id", type: "bigint", comment: "Primary Key" })
+    id?: number;
+
     @Column({ name: "action", type: 'varchar', nullable: false })
     action?: string;
 
