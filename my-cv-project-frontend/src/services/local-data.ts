@@ -273,7 +273,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 jobDescription: "Full Stack Developer at Soft Square International Co. ltd",
                 workplaceName: "Soft Square International Co. ltd",
                 sequence: 1,
-                workStartDate: new Date("2025-04-01"),
+                workStartDate: new Date("2024-04-01"),
                 workEndDate: null,
                 isPresent: true,
                 projects: [
