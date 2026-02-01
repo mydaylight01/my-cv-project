@@ -26,7 +26,4 @@ dist-ssr
 *.sw?
 
 # Generated API
-generated-api
 generated-logs
-generate-api-backup
-src/swagger.json
