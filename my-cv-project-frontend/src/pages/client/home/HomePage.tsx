@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { healthCheckService } from '../../../service/api/client/healthCheck';
 
 const HomePage: React.FC = () => {
@@ -12,10 +12,13 @@ const HomePage: React.FC = () => {
         }
     };
 
+    useEffect(() => {
+        handleHealthCheck();
+    }, []);
+
     return (
         <div>
             <h1>Home</h1>
-            <button onClick={handleHealthCheck} className='bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600 transition-colors duration-200'>Check Health</button>
         </div>
     );
 };

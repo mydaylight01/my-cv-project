@@ -9,10 +9,6 @@ import {
 } from "typeorm";
 
 export abstract class AuditEntity extends BaseEntity {
-
-    @PrimaryGeneratedColumn("increment", { name: "id", type: "bigint", comment: "Primary Key" })
-    id?: number;
-
     @Column({ name: "uuid", type: "uuid", default: () => "uuid_generate_v4()", unique: true, comment: "UUID Key" })
     uuid?: string;
 
