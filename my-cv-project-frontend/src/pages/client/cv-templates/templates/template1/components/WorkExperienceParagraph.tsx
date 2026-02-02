@@ -22,10 +22,10 @@ const WorkExperienceParagraph: React.FC<TemplatePageProps> = ({ data }) => {
         try {
             if (!date) return "";
 
-            return new Intl.DateTimeFormat("en-US", {
+            return new Date(date).toLocaleDateString("en-US", {
                 month: "short",
                 year: "numeric",
-            }).format(date);
+            });
         } catch (error) {
             console.error("[WorkExperienceParagraph][renderDateWithFormat][Error] formatting date:", error);
             return "";

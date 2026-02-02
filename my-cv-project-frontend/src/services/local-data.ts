@@ -1,4 +1,5 @@
 import type { MyCvData } from "./model/mockup.model";
+import dayjs from "dayjs";
 
 const myCvDataTemplate: Array<MyCvData> = [{
     ownerDisplayName: "",
@@ -273,14 +274,14 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 jobDescription: "Full Stack Developer at Soft Square International Co. ltd",
                 workplaceName: "Soft Square International Co. ltd",
                 sequence: 1,
-                workStartDate: new Date("2024-04-01"),
+                workStartDate: dayjs("2024-04-01").toDate(),
                 workEndDate: null,
                 isPresent: true,
                 projects: [
                     {
                         sequence: 1,
                         projectName: "Human Resources Management System with sales requirements",
-                        projectStartDate: new Date("2025-04-01"),
+                        projectStartDate: dayjs("2025-04-01").toDate(),
                         projectEndDate: null,
                         projectDescription: [
                             {
@@ -300,8 +301,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 2,
                         projectName: "Cash Reconcile System",
-                        projectStartDate: new Date("2025-03-01"),
-                        projectEndDate: new Date("2025-10-01"),
+                        projectStartDate: dayjs("2025-03-01").toDate(),
+                        projectEndDate: dayjs("2025-10-01").toDate(),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -320,8 +321,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 3,
                         projectName: "Company Website Design",
-                        projectStartDate: new Date("2025-05-01"),
-                        projectEndDate: new Date("2025-06-01"),
+                        projectStartDate: dayjs("2025-05-01").toDate(),
+                        projectEndDate: dayjs("2025-06-01").toDate(),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -332,8 +333,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 4,
                         projectName: "Broadcast Content Management System",
-                        projectStartDate: new Date("2024-11-01"),
-                        projectEndDate: new Date("2025-02-01"),
+                        projectStartDate: dayjs("2024-11-01").toDate(),
+                        projectEndDate: dayjs("2025-02-01").toDate(),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -352,8 +353,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 5,
                         projectName: "Customer Relationship Management with Survey & Notification",
-                        projectStartDate: new Date("2024-08-01"),
-                        projectEndDate: new Date("2025-03-01"),
+                        projectStartDate: dayjs("2024-08-01").toDate(),
+                        projectEndDate: dayjs("2025-03-01").toDate(),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -368,8 +369,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 6,
                         projectName: "Human Resources Management System Package",
-                        projectStartDate: new Date("2024-07-01"),
-                        projectEndDate: new Date("2025-04-01"),
+                        projectStartDate: dayjs("2024-07-01").toDate(),
+                        projectEndDate: dayjs("2025-04-01").toDate(),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -388,8 +389,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 7,
                         projectName: "Digital-Procurement System",
-                        projectStartDate: new Date("2024-04-01"),
-                        projectEndDate: new Date("2024-08-01"),
+                        projectStartDate: dayjs("2024-04-01").toDate(),
+                        projectEndDate: dayjs("2024-08-01").toDate(),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -417,14 +418,14 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 workplaceName: "Soft Square International Co. ltd",
                 sequence: 1,
                 isPresent: false,
-                workStartDate: new Date("2024-11-01"),
-                workEndDate: new Date("2025-04-01"),
+                workStartDate: dayjs("2024-11-01").toDate(),
+                workEndDate: dayjs("2025-04-01").toDate(),
                 projects: [
                     {
                         sequence: 1,
                         projectName: "Purchase Order and Invoice Management System",
-                        projectStartDate: new Date("2023-02-01"),
-                        projectEndDate: new Date("2023-03-01"),
+                        projectStartDate: dayjs("2023-02-01").toDate(),
+                        projectEndDate: dayjs("2023-03-01").toDate(),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -443,8 +444,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     {
                         sequence: 2,
                         projectName: "Account Receivable System",
-                        projectStartDate: new Date("2023-12-01"),
-                        projectEndDate: new Date("2024-04-01"),
+                        projectStartDate: dayjs("2023-12-01").toDate(),
+                        projectEndDate: dayjs("2024-04-01").toDate(),
                         projectDescription: [
                             {
                                 paragraphSequence: 1,
@@ -463,21 +464,21 @@ const myCvDataTemplate: Array<MyCvData> = [{
             {
                 achievementName: "Tuksom Garage",
                 description: "Represented team as a pitcher in a pitching idea competition (One Stop Service Platform for C2C)",
-                achievementDate: new Date("2025-07-01"),
+                achievementDate: dayjs("2025-07-01").toDate(),
                 sequence: 1,
                 link: ""
             },
             {
                 achievementName: "Company & Team Knowledge Sharing Session",
                 description: "Contributed to knowledge-sharing sessions to enhance team productivity.",
-                achievementDate: new Date("2025-11-01"),
+                achievementDate: dayjs("2025-11-01").toDate(),
                 sequence: 2,
                 link: ""
             },
             {
                 achievementName: "Internship Student Guidance",
                 description: "Provided guidance and training for internship students in each batch on fundamental programming topics",
-                achievementDate: new Date("2025-05-01"),
+                achievementDate: dayjs("2025-05-01").toDate(),
                 sequence: 3,
                 link: ""
             }
@@ -485,8 +486,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
         educationExperiences: [
             {
                 sequence: 1,
-                startDate: new Date("2020-01-01"),
-                endDate: new Date("2024-01-01"),
+                startDate: dayjs("2020-01-01").toDate(),
+                endDate: dayjs("2024-01-01").toDate(),
                 dateFormat: "YYYY",
                 gpa: 3.32,
                 degree: "Bachelor of Science in Computer Science",
