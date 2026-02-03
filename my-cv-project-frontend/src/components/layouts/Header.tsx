@@ -71,12 +71,12 @@ const Header: React.FC = () => {
                         <IoMenu size={26} className="hover:text-gray-400 hover:cursor-pointer hover:translate-x-1 transition-all duration-300 ease-in-out" />
                     </div>
                     <div id="header-nav-left-menu" className="flex items-center gap-1 md:gap-3">
-                        {/* <ButtonTemplate
+                        <ButtonTemplate
                             icon={<FaHome size={26} />}
                             label="Home"
                             forPath={Paths.Home}
                             onClick={() => navigate(Paths.Home)}
-                        /> */}
+                        />
                         {currentUserInfo && (
                             <>
                                 <ButtonTemplate
