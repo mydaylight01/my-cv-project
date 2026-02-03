@@ -120,18 +120,18 @@ const Header: React.FC = () => {
                         </div>
                     ) : (
                         <div id="header-nav-right-logged-out" className="flex items-center md:gap-3">
-                            {/* <ButtonTemplate
+                            <ButtonTemplate
                                 icon={<LuCircleUserRound size={26} />}
                                 label="Sign In"
                                 forPath={Paths.Login}
-                                onClick={() => navigate(Paths.Login)}
+                            // onClick={() => navigate(Paths.Login)}
                             />
                             <ButtonTemplate
                                 icon={<LuUserRoundPlus size={26} />}
                                 label="Sign Up"
                                 forPath={Paths.Register}
-                                onClick={() => navigate(Paths.Register)}
-                            /> */}
+                            // onClick={() => navigate(Paths.Register)}
+                            />
                         </div>
                     )}
                 </div>
