@@ -11,7 +11,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
         publishStatus: true,
         imageUrl: "https://lh3.googleusercontent.com/d/1h_5aaDk0JC4-kPki7zHRnbd549HGazNC",
         imageUrlFlip: "https://lh3.googleusercontent.com/d/1adxpp846LrZtuCE4tu1gtL_t8vVLXrFi",
-        downloadLink: "",
+        downloadLink: "https://drive.google.com/uc?export=download&id=13cUxd-cpNh20Ow2kl-DHs_PFfApKblhy",
         languageCode: "EN",
         titleName: "",
         firstName: "Natthawut",
@@ -280,7 +280,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
                 projects: [
                     {
                         sequence: 1,
-                        projectName: "Human Resources Management System with sales requirements",
+                        projectName: "Human Resources Management System (ECT-ERP)",
                         projectStartDate: dayjs("2025-04-01").toDate(),
                         projectEndDate: null,
                         projectDescription: [
@@ -320,18 +320,6 @@ const myCvDataTemplate: Array<MyCvData> = [{
                     },
                     {
                         sequence: 3,
-                        projectName: "Company Website Design",
-                        projectStartDate: dayjs("2025-05-01").toDate(),
-                        projectEndDate: dayjs("2025-06-01").toDate(),
-                        projectDescription: [
-                            {
-                                paragraphSequence: 1,
-                                description: "Designed the “Our Products” page in Figma and built a sample product page using Wix."
-                            }
-                        ]
-                    },
-                    {
-                        sequence: 4,
                         projectName: "Broadcast Content Management System",
                         projectStartDate: dayjs("2024-11-01").toDate(),
                         projectEndDate: dayjs("2025-02-01").toDate(),
@@ -351,8 +339,8 @@ const myCvDataTemplate: Array<MyCvData> = [{
                         ]
                     },
                     {
-                        sequence: 5,
-                        projectName: "Customer Relationship Management with Survey & Notification",
+                        sequence: 4,
+                        projectName: "Customer Relationship Management",
                         projectStartDate: dayjs("2024-08-01").toDate(),
                         projectEndDate: dayjs("2025-03-01").toDate(),
                         projectDescription: [
@@ -367,7 +355,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
                         ]
                     },
                     {
-                        sequence: 6,
+                        sequence: 5,
                         projectName: "Human Resources Management System Package",
                         projectStartDate: dayjs("2024-07-01").toDate(),
                         projectEndDate: dayjs("2025-04-01").toDate(),
@@ -387,7 +375,7 @@ const myCvDataTemplate: Array<MyCvData> = [{
                         ]
                     },
                     {
-                        sequence: 7,
+                        sequence: 6,
                         projectName: "Digital-Procurement System",
                         projectStartDate: dayjs("2024-04-01").toDate(),
                         projectEndDate: dayjs("2024-08-01").toDate(),

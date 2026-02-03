@@ -5,6 +5,7 @@ import LanguageSkillParagraph from "./LanguageSkillParagraph";
 import SkillSetParagraph from "./SkillSetParagraph";
 import SummaryParagraph from "./SummaryParagraph";
 import WorkExperienceParagraph from "./WorkExperienceParagraph";
+import DownloadButton from "./DownloadButton";
 
 export {
     AchievementParagraph,
@@ -13,5 +14,6 @@ export {
     LanguageSkillParagraph,
     SkillSetParagraph,
     SummaryParagraph,
-    WorkExperienceParagraph
+    WorkExperienceParagraph,
+    DownloadButton
 }

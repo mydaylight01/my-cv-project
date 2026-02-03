@@ -8,6 +8,7 @@ import {
     AchievementParagraph,
     // LanguageSkillParagraph,
     // EducationExperienceParagraph,
+    DownloadButton,
 } from "./components";
 
 const Template1Page: React.FC<TemplatePageProps> = ({ data }) => {
@@ -18,7 +19,8 @@ const Template1Page: React.FC<TemplatePageProps> = ({ data }) => {
 
     return (
         <>
-            <div className="flex flex-col">
+            <div className="flex flex-col relative">
+                <DownloadButton data={data} />
                 <GreetingsParagraph data={data} />
                 <SummaryParagraph data={data} />
                 <SkillSetParagraph data={data} />
