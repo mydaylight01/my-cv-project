@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { healthCheckService } from '../../../service/api/client/healthCheck';
 
 const HomePage: React.FC = () => {
+    const navigate = useNavigate();
+
     const handleHealthCheck = async () => {
         try {
             console.log('[start][handleHealthCheck]');
@@ -13,13 +17,13 @@ const HomePage: React.FC = () => {
     };
 
     useEffect(() => {
+        navigate('/contact');
         handleHealthCheck();
     }, []);
 
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <>
+        </>
     );
 };
 
