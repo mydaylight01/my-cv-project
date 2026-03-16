@@ -9,10 +9,11 @@ const HomePage: React.FC = () => {
     const handleHealthCheck = async () => {
         try {
             console.log('[start][handleHealthCheck]');
-            await healthCheckService.healthCheck();
-            console.log('[end][handleHealthCheck] response: void');
-        } catch (error) {
+            const response = await healthCheckService.healthCheck();
+            console.log('[end][handleHealthCheck] response: ', response);
+        } catch (error: unknown) {
             console.error('[error][handleHealthCheck]', error);
+            throw error;
         }
     };
 
@@ -22,8 +23,7 @@ const HomePage: React.FC = () => {
     }, []);
 
     return (
-        <>
-        </>
+        <></>
     );
 };
 
